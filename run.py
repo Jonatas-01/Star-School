@@ -20,6 +20,7 @@ def welcome_page():
     """
      Display the Welcome Page to customer
     """
+    clear_terminal()
     print(r"""
          ______   ________   ________   ________      ______   __   __     _____   ________   ________   __
         /   ___) |__    __| |   __   | |   __   |    /   ___) |  | |  |   /   __| |   __   | |   __   | |  |
@@ -31,6 +32,24 @@ def welcome_page():
     print("Welcome to Star School!")
     print("Here you can have access to manage all students data.")
     main_menu()
+
+
+def clear_terminal():
+    """
+     Clear the terminal
+    """
+    os.system("clear") # clear the terminal
+
+
+def view_students():
+    """
+     Display all students data
+    """
+    print("View all students data")
+    # Print the data
+    for row in data:
+        print(row)
+
 
 def main_menu():
     """
@@ -46,15 +65,32 @@ def main_menu():
     4. Delete student data
     5. Exit
     """)
+    # Get the user's choice
     try:
         choice = int(input("Enter your choice (1-5): "))
-        if choice >= 1 and choice <= 5:
-            print(choice)
+        if choice == 1:
+            clear_terminal()
+            view_students()
+            break
+        elif choice == 2:
+            print(f"Option {choice} choosed")
+            break
+        elif choice == 3:
+            print(f"Option {choice} choosed")
+            break
+        elif choice == 4:
+            print(f"Option {choice} choosed")
+            break
+        elif choice == 5:
+            print("Exiting...")
+            break
         else:
+            clear_terminal()
             print("Invalid input. Please enter a number between 1 and 5.")
+            main_menu()
 
     except ValueError:
-        os.system("clear")
+        clear_terminal()
         print("Invalid input. Please enter a number between 1 and 5.")
         main_menu()
 
