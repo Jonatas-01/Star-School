@@ -49,7 +49,31 @@ def view_students():
     # Print the data
     for row in data:
         print(row)
+    
+    while True:
+        try:
+            print("""
+            Please choose from the following options:
 
+            1.Back to Main Menu.
+            2.Exit.
+            """)
+            # Get user's choise
+            choice = int(input("Enter you choice:"))
+            if choice == 1:
+                clear_terminal()
+                print("Returning to Main Menu...")
+                main_menu()
+                break
+            elif choice == 2:
+                clear_terminal()
+                break
+            else:
+                clear_terminal()
+                print("Invalid input. Please enter a number between 1 and 2.")
+        except:
+            clear_terminal()
+            print("Invalid input. Please enter a number between 1 and 2.")
 
 def main_menu():
     """
@@ -94,6 +118,7 @@ def main_menu():
             clear_terminal()
             print("Invalid input. Please enter a number between 1 and 5.")
             main_menu()
+            break
 
 
 welcome_page()
