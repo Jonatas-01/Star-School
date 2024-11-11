@@ -30,5 +30,34 @@ def welcome_page():
     """)
     print("Welcome to Star School!")
     print("Here you can have access to manage all students data.")
+    main_menu()
+
+def main_menu():
+    """
+     Display the Main Menu to customer
+    """
+    print("""
+    Main Menu:
+    Please choose from the following options:
+
+    1. View all students data
+    2. Add new student data
+    3. Update student data
+    4. Delete student data
+    5. Exit
+    """)
+    try:
+        choice = int(input("Enter your choice (1-5): "))
+        if choice >= 1 and choice <= 5:
+            print(choice)
+        else:
+            print("Invalid input. Please enter a number between 1 and 5.")
+
+    except ValueError:
+        os.system("clear")
+        print("Invalid input. Please enter a number between 1 and 5.")
+        main_menu()
+
 
 welcome_page()
+
