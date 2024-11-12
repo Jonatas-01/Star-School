@@ -22,12 +22,12 @@ def welcome_page():
     """
     clear_terminal()
     print(r"""
-         ______   ________   ________   ________      ______     _____   __    __   ________   ________   __
-        /   ___) |__    __| |   __   | |   __   |    /   ___)   /   __| |  |  |  | |   __   | |   __   | |  |
-       (   (__      |  |    |  |__|  | |  |__| _/   (   (__    /   /    |  |__|  | |  |  |  | |  |  |  | |  |
-        \__   \     |  |    |   __   | |   __   \    \__   \  (   (     |   __   | |  |  |  | |  |  |  | |  |
-        ___)   )    |  |    |  |  |  | |  |  |  |    ___)   )  \   \__  |  |  |  | |  |__|  | |  |__|  | |  |_____
-       (______/     |__|    |__|  |__| |__|  |__|   (______/    \_____| |__|  |__| |________| |________| |________|
+         ______   ________   ________   ________       ______     _____   __    __   ________   ________   __
+        /   ___) |__    __| |   __   | |   __   |     /   ___)   /   __| |  |  |  | |   __   | |   __   | |  |
+       (   (__      |  |    |  |__|  | |  |__| _/    (   (__    /   /    |  |__|  | |  |  |  | |  |  |  | |  |
+        \__   \     |  |    |   __   | |   __   \     \__   \  (   (     |   __   | |  |  |  | |  |  |  | |  |
+        ___)   )    |  |    |  |  |  | |  |  |  |     ___)   )  \   \__  |  |  |  | |  |__|  | |  |__|  | |  |_____
+       (______/     |__|    |__|  |__| |__|  |__|    (______/    \_____| |__|  |__| |________| |________| |________|
     """)
     print("Welcome to Star School!")
     print("Here you can have access to manage all students data.")
@@ -75,6 +75,24 @@ def view_students():
             clear_terminal()
             print("Invalid input. Please enter a number between 1 and 2.")
 
+
+def add_student():
+    """
+    Get value from the user, validate the data and update the worksheet
+    """
+    print("Add new student data")
+    # Get the student data from the user
+    print("""
+    Enter student data as the example bellow.
+    Example: Name, Student number, Date of birth, Year Grade, Test-1, Test-2, Test-3.
+            John, 12345678, 01/01/2000, 1, 80, 90, 70.
+    """)
+    # Add the student data to the worksheet
+    new_data = print(input("Enter student data: "))
+    print(new_data)
+
+
+
 def main_menu():
     """
      Display the Main Menu to customer
@@ -98,7 +116,8 @@ def main_menu():
                 view_students()
                 break
             elif choice == 2:
-                print(f"Option {choice} choosed")
+                clear_terminal()
+                add_student()
                 break
             elif choice == 3:
                 print(f"Option {choice} choosed")
