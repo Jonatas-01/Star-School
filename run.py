@@ -41,21 +41,16 @@ def clear_terminal():
     os.system("clear") # clear the terminal
 
 
-def view_students():
+def return_to_main_menu():
     """
-     Display all students data
+     Return to the main menu
     """
-    print("View all students data")
-    # Print the data
-    for row in data:
-        print(row)
-    
     while True:
         try:
             print("""
             Please choose from the following options:
 
-            1.Back to Main Menu.
+            1.Return to Main Menu.
             2.Exit.
             """)
             # Get user's choise
@@ -74,6 +69,17 @@ def view_students():
         except:
             clear_terminal()
             print("Invalid input. Please enter a number between 1 and 2.")
+
+def view_students():
+    """
+     Display all students data
+    """
+    print("View all students data")
+    # Print the data
+    for row in data:
+        print(row)
+    
+    return_to_main_menu()
 
 
 def add_student():
@@ -98,13 +104,19 @@ def add_student():
         if validate_data(personal_data):
             break
     
-    return personal_data
+    # Update the worksheet
+    print("Updating worksheet...")
+    students.append_row(personal_data)
+    print("Worksheet updated successfully!")
+
+    return_to_main_menu()
 
 
 def validate_data(values):
     """
-    Inside the try, validades all 5 values from the user and raise ValueError if 
-    the data is invalid.
+    Inside the try, validades all 5 values from the user, update
+    string to integer starting from second data and raise ValueError 
+    if the data is invalid.
     """
 
     try:
@@ -126,7 +138,7 @@ def validate_data(values):
             raise ValueError(
                 f"Student number must be 8 digits long, you provided {len(values[1])}"
             )
-        elif not values[1].isdigit():
+        elif not values[1].isdigit() or values[0].isspace():
             clear_terminal()
             raise ValueError(
                 f"Student number must be a number, you provided {values[1]}"
@@ -144,6 +156,8 @@ def validate_data(values):
                 f"Year Grade must be a number between 1 and 3, you provided {values[3]}"
             )
         else:
+            for i in range(1, 4):
+                values[i] = int(values[i])
             print("Data is valid!")
             return True
     except ValueError as e:
