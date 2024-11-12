@@ -198,7 +198,37 @@ def main_menu():
                 break
             elif choice == 2:
                 clear_terminal()
-                add_student()
+                print("""
+                Please choose from the following options:
+
+                1.Add new student personal data.
+                2.Add student exams data.
+                3.Return to Main Menu.
+                4.Exit.
+                """)
+                while True:
+                    try:
+                        choice = int(input("Enter your choice (1-4): "))
+                        if choice == 1:
+                            clear_terminal()
+                            add_student()
+                            break
+                        elif choice == 2:
+                            print(f"Option {choice} choosed")
+                            break
+                        elif choice == 3:
+                            clear_terminal()
+                            main_menu()
+                            break
+                        elif choice == 4:
+                            exit_program()
+                            break
+                        else:
+                            clear_terminal()
+                            print("Invalid input. Please enter a number between 1 and 4.")
+                    except ValueError:
+                        clear_terminal()
+                        print("Invalid input. Please enter a number between 1 and 4.")
                 break
             elif choice == 3:
                 print(f"Option {choice} choosed")
