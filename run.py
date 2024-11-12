@@ -41,6 +41,15 @@ def clear_terminal():
     os.system("clear") # clear the terminal
 
 
+def exit_program():
+    """
+     Exit the program
+    """
+    clear_terminal()
+    print("Thank you for using Star School!")
+    print("Goodbye!")  
+
+
 def return_to_main_menu():
     """
      Return to the main menu
@@ -61,7 +70,7 @@ def return_to_main_menu():
                 main_menu()
                 break
             elif choice == 2:
-                clear_terminal()
+                exit_program()
                 break
             else:
                 clear_terminal()
@@ -69,6 +78,7 @@ def return_to_main_menu():
         except:
             clear_terminal()
             print("Invalid input. Please enter a number between 1 and 2.")
+
 
 def view_students():
     """
@@ -197,7 +207,7 @@ def main_menu():
                 print(f"Option {choice} choosed")
                 break
             elif choice == 5:
-                print("Exiting...")
+                exit_program()
                 break
             else:
                 clear_terminal()
