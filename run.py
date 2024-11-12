@@ -81,21 +81,24 @@ def add_student():
     Get value from the user and update the worksheet
     """
     print("Add new student data")
+    while True:
+        # Get the student personal data from the user
+        print("""
+        Enter student personal data as the example bellow.
+        Example: Name, Student number, Age, Year Grade.
+                John,12345678,13,1
+        """)
 
-    # Get the student personal data from the user
-    print("""
-    Enter student personal data as the example bellow.
-    Example: Name, Student number, Age, Year Grade.
-             John, 12345678, 13, 1
-    """)
+        # Get the student personal data from the user
+        new_data = input("Enter student data: ")
+        personal_data = new_data.split(",")
 
-    # Get the student personal data from the user
-    new_data = input("Enter student data: ")
-    personal_data = new_data.split(",")
+        # Validate the data
 
-    # Validate the data
-
-    validate_data(personal_data)
+        if validate_data(personal_data):
+            break
+    
+    return personal_data
 
 
 def validate_data(values):
@@ -107,30 +110,36 @@ def validate_data(values):
     try:
         # Validate values, must be 4 values
         if len(values) != 4:
+            clear_terminal()
             raise ValueError(
                 f"Exactly 5 values required, you provided {len(values)}"
             )
         # Validate firt value, must be a string
         elif not values[0].isalpha():
+            clear_terminal()
             raise ValueError(
                 f"Name must be a string, you provided {values[0]}"
             )
         # Validate second value, must be a number and 8 digits long
         elif len(values[1]) != 8:
+            clear_terminal()
             raise ValueError(
                 f"Student number must be 8 digits long, you provided {len(values[1])}"
             )
         elif not values[1].isdigit():
+            clear_terminal()
             raise ValueError(
                 f"Student number must be a number, you provided {values[1]}"
             )
         # Validate third value, must be a number
         elif not values[2].isdigit():
+            clear_terminal()
             raise ValueError(
                 f"Age must be a number, you provided {values[2]}"
             )
         # Validate fourth value, must be a number beetween 1 and 3
         elif not values[3].isdigit() or int(values[3]) < 1 or int(values[3]) > 3:
+            clear_terminal()
             raise ValueError(
                 f"Year Grade must be a number between 1 and 3, you provided {values[3]}"
             )
