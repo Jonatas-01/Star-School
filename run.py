@@ -247,16 +247,13 @@ def update_name():
                 break
         except ValueError as e:
             print(f"Invalid data: {e}\n")
-
                 
-
 
 def choose_update_student():
     """
     Let the user choose what data to update
     """
     view_students()
-    print("\nWhat data you want to update?\n")
     while True:
         try:
             print("""
@@ -369,6 +366,7 @@ def main_menu():
                         print("Invalid input. Please enter a number between 1 and 4.")
                 break
             elif choice == 3:
+                clear_terminal()
                 choose_update_student()
                 break
             elif choice == 4:
@@ -376,6 +374,7 @@ def main_menu():
                 delete_student()
                 break
             elif choice == 5:
+                clear_terminal()
                 exit_program()
                 break
             else:
