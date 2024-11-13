@@ -84,10 +84,13 @@ def view_students():
     """
      Display all students data
     """
-    print("View all students data")
+    print("View all students data\n")
     # Print the data
-    for row in data:
-        print(row)
+    print(
+        f"{'Name':<12}{'Student Number':<21}{'Age':<10}{'Year Grade':<15}{'Test-1':<10}{'Test-2':<10}{'Test-3':<10}"
+        )
+    for index, row in enumerate(data[1:], start=1):
+        print(f"{index}. {row[0]:<12}{row[1]:<19}{row[2]:<10}{row[3]:<16}{row[4]:<10}{row[5]:<10}{row[6]:<10}")
     
     return_to_main_menu()
 
@@ -173,6 +176,7 @@ def validate_data(values):
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
         return False
+
 
 def main_menu():
     """
