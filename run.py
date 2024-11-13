@@ -84,15 +84,12 @@ def view_students():
     """
      Display all students data
     """
-    print("View all students data\n")
     # Print the data
     print(
         f"{'Name':<12}{'Student Number':<21}{'Age':<10}{'Year Grade':<15}{'Test-1':<10}{'Test-2':<10}{'Test-3':<10}"
         )
     for index, row in enumerate(data[1:], start=1):
         print(f"{index}. {row[0]:<12}{row[1]:<19}{row[2]:<10}{row[3]:<16}{row[4]:<10}{row[5]:<10}{row[6]:<10}")
-    
-    return_to_main_menu()
 
 
 def add_student():
@@ -178,6 +175,36 @@ def validate_data(values):
         return False
 
 
+def delete_student():
+    """
+    Get the student number from the user and delete the row
+    """
+    print("Delete student data\n")
+    while True:
+        try:
+            view_students()
+            # Get the student number from the user
+            print("""
+            Enter student line number you want to delete.
+            """)
+            student_row = input("Enter line number: ")
+            # Validate if the input is a number and is in the range of the data
+            if student_row.isdigit() and 1 <= int(student_row) <= len(data) - 1:
+                student_row = int(student_row)
+                students.delete_rows(student_row +1)
+                print("Student data deleted successfully!")
+                return_to_main_menu()
+                break
+            else:
+                clear_terminal()
+                raise ValueError(
+                    f"Invalid line number, please try again."
+                )
+        except ValueError as e:
+            print(f"Invalid data: {e}\n")
+            
+
+
 def main_menu():
     """
      Display the Main Menu to customer
@@ -198,7 +225,9 @@ def main_menu():
             choice = int(input("Enter your choice (1-5): "))
             if choice == 1:
                 clear_terminal()
+                print("View all students data\n")
                 view_students()
+                return_to_main_menu()
                 break
             elif choice == 2:
                 clear_terminal()
@@ -238,7 +267,8 @@ def main_menu():
                 print(f"Option {choice} choosed")
                 break
             elif choice == 4:
-                print(f"Option {choice} choosed")
+                clear_terminal()
+                delete_student()
                 break
             elif choice == 5:
                 exit_program()
