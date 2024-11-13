@@ -97,6 +97,7 @@ def add_student():
     Get value from the user and update the worksheet
     """
     print("Add new student data")
+    print("Press ENTER to return to menu")
     while True:
         # Get the student personal data from the user
         print("""
@@ -112,19 +113,22 @@ def add_student():
         # Validate the data
 
         if validate_data(personal_data):
-            break
-    
-    # Update the worksheet
-    print("Updating worksheet...")
-    students.append_row(personal_data)
-    print("Worksheet updated successfully!")
+            # Update the worksheet
+            print("Updating worksheet...")
+            students.append_row(personal_data)
+            print("Worksheet updated successfully!")
 
-    return_to_main_menu()
+            return_to_main_menu()
+            break
+        elif new_data == '':
+            clear_terminal()
+            main_menu()
+            break
 
 
 def validate_data(values):
     """
-    Inside the try, validades all 5 values from the user, update
+    Inside the try, validades all 4 values from the user, update
     string to integer starting from second data and raise ValueError 
     if the data is invalid.
     """
@@ -177,7 +181,7 @@ def validate_data(values):
 
 def delete_student():
     """
-    Get the student number from the user and delete the row
+    Get the student row number from the user and delete the row
     """
     print("Delete student data\n")
     while True:
@@ -202,7 +206,108 @@ def delete_student():
                 )
         except ValueError as e:
             print(f"Invalid data: {e}\n")
+
+
+def update_name():
+    """
+    Get the student row number from the user and update the name
+    """
+    print("Update student name\n")
+    while True:
+        try:
+            view_students()
+            print("""
+            Enter student line number you want to update and student name as
+            the example bellow.
+            Example: 1,John
+            """)
+            student_data = input("Enter data: ")
+            split_data = student_data.split(",")
+            student_row = split_data[0]
+            student_name = split_data[1]
+
+            # Validate if the input is a string
+            if not student_name.isalpha():
+                clear_terminal()
+                raise ValueError(
+                    f"Invalid name, please try again."
+                )
+            # Validate if the input is a number and is in the range of the data
+            elif not student_row.isdigit() and not 1 <= int(student_row) <= len(data) - 1:
+                clear_terminal()
+                raise ValueError(
+                    f"Invalid value, please try again."
+                )
+            else:
+                student_row = int(student_row)
+                students.update_cell(student_row + 1, 1, student_name)
+                clear_terminal()
+                print("Student name updated successfully!")
+                return_to_main_menu()
+                break
+        except ValueError as e:
+            print(f"Invalid data: {e}\n")
+
+                
+
+
+def choose_update_student():
+    """
+    Let the user choose what data to update
+    """
+    view_students()
+    print("\nWhat data you want to update?\n")
+    while True:
+        try:
+            print("""
+                Please choose from the following options, what date you want to update:
+
+                1. Name
+                2. Student number
+                3. Age
+                4. Year Grade
+                5. Tests scores
+                6. Return to main menu
+                7. Exit
+                """)
+            # Get the student number from the user
+            update_option = int(input("Enter your choice: "))
             
+            # Validate if the input is a number and is in the range of the data
+            if update_option == 1:
+                clear_terminal()
+                update_name()
+                break
+            elif update_option == 2:
+                clear_terminal()
+                update_student_number()
+                break
+            elif update_option == 3:
+                clear_terminal()
+                update_age()
+                break
+            elif update_option == 4:
+                clear_terminal()
+                update_year_grade()
+                break
+            elif update_option == 5:
+                clear_terminal()
+                update_tests_scores()
+                break
+            elif update_option == 6:
+                clear_terminal()
+                main_menu()
+                break
+            elif update_option == 7:
+                exit_program()
+                break
+            else:
+                clear_terminal()
+                raise ValueError(
+                    f"Invalid option, please try again."
+                )
+        except ValueError as e:
+            print(f"Invalid data: {e}\n")
 
 
 def main_menu():
@@ -231,15 +336,15 @@ def main_menu():
                 break
             elif choice == 2:
                 clear_terminal()
-                print("""
-                Please choose from the following options:
-
-                1.Add new student personal data.
-                2.Add student exams data.
-                3.Return to Main Menu.
-                4.Exit.
-                """)
                 while True:
+                    print("""
+                    Please choose from the following options:
+
+                    1.Add new student personal data.
+                    2.Add student exams data.
+                    3.Return to Main Menu.
+                    4.Exit.
+                    """)
                     try:
                         choice = int(input("Enter your choice (1-4): "))
                         if choice == 1:
@@ -264,7 +369,7 @@ def main_menu():
                         print("Invalid input. Please enter a number between 1 and 4.")
                 break
             elif choice == 3:
-                print(f"Option {choice} choosed")
+                choose_update_student()
                 break
             elif choice == 4:
                 clear_terminal()
