@@ -440,6 +440,86 @@ def update_year_grade():
             print(f"Invalid data: {e}\n")
 
 
+def update_tests_scores():
+    """
+    Get the student row number from the user and update the tests scores
+    """
+    print("Update student tests scores")
+    while True:
+        try:
+            print("Press ENTER to return to menu\n")
+            view_students()
+            print("""
+            Enter student line number you want to update and student tests scores as
+            the example bellow.
+            Example: 1,82,65,70,90
+            If you want to update only one test score, enter the score and 0 for the other tests.
+            """)
+            student_data = input("Enter data: ")
+
+            # Check if the user pressed ENTER to back to main menu
+            if student_data == '':
+                clear_terminal()
+                main_menu()
+                break
+
+            split_data = student_data.split(",")
+
+            # Check if the user entered the correct number of values
+            if len(split_data) == 5:
+                student_row = split_data[0]
+                test_1 = split_data[1]
+                test_2 = split_data[2]
+                test_3 = split_data[3]
+                test_4 = split_data[4]
+                # Validate if the input is a number and is in the range of the data
+                if student_row.isdigit() and 1 <= int(student_row) <= len(data) - 1:
+                    # Validate test scores values
+                    if not test_1.isdigit() and int(test_1) < 0 or int(test_1) > 100:
+                        clear_terminal()
+                        raise ValueError(
+                            f"Invalid test 1 score, you provide {test_1}"
+                        )
+                    elif not test_2.isdigit() and int(test_2) < 0 or int(test_2) > 100:
+                        clear_terminal()
+                        raise ValueError(
+                            f"Invalid test 2 score, you provide {test_2}"
+                        )
+                    elif not test_3.isdigit() and int(test_3) < 0 or int(test_3) > 100:
+                        clear_terminal()
+                        raise ValueError(
+                            f"Invalid test 3 score, you provide {test_3}"
+                        )
+                    elif not test_4.isdigit() and int(test_4) < 0 or int(test_4) > 100:
+                        clear_terminal()
+                        raise ValueError(
+                            f"Invalid test 4 score, you provide {test_4}"
+                        )
+                    else:
+                        student_row = int(student_row)
+                        # Update the student tests scores
+                        students.update_cell(student_row + 1, 5, test_1)
+                        students.update_cell(student_row + 1, 6, test_2)
+                        students.update_cell(student_row + 1, 7, test_3)
+                        students.update_cell(student_row + 1, 8, test_4)
+                        clear_terminal()
+                        print("Student tests scores updated successfully!")
+                        return_to_main_menu
+                        break
+                else:
+                    clear_terminal()
+                    raise ValueError(
+                        f"Invalid line number, you provide {student_row}"
+                    )
+            else:
+                clear_terminal()
+                raise ValueError(
+                    f"Exactly five values are required, you provided {len(split_data)}, please try again."
+                )
+        except ValueError as e:
+            print(f"Invalid data: {e}\n")
+                        
+
 def choose_update_student():
     """
     Let the user choose what data to update
@@ -495,6 +575,7 @@ def choose_update_student():
                     f"Invalid option, please try again."
                 )
         except ValueError as e:
+            clear_terminal()
             print(f"Invalid data: {e}\n")
 
 
