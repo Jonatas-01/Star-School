@@ -183,7 +183,8 @@ def delete_student():
     """
     Get the student row number from the user and delete the row
     """
-    print("Delete student data\n")
+    print("Delete student data")
+    print("Press ENTER to return to menu\n")
     while True:
         try:
             view_students()
@@ -200,6 +201,10 @@ def delete_student():
                 print("Student data deleted successfully!")
                 return_to_main_menu()
                 break
+            elif student_row == '':
+                clear_terminal()
+                main_menu()
+                break
             else:
                 clear_terminal()
                 raise ValueError(
@@ -213,7 +218,8 @@ def update_name():
     """
     Get the student row number from the user and update the name
     """
-    print("Update student name\n")
+    print("Update student name")
+    print("Press ENTER to return to menu\n")
     while True:
         try:
             view_students()
@@ -223,6 +229,13 @@ def update_name():
             Example: 1,John
             """)
             student_data = input("Enter data: ")
+
+            # Check if the user pressed ENTER to back to main menu
+            if student_data == '':
+                clear_terminal()
+                main_menu()
+                break
+
             split_data = student_data.split(",")
             student_row = split_data[0]
             student_name = split_data[1]
@@ -255,7 +268,8 @@ def update_student_number():
     """
     Get the student row number from the user and update the student number
     """
-    print("Update student number\n")
+    print("Update student number")
+    print("Press ENTER to return to menu\n")
     while True:
         try:
             view_students()
@@ -265,6 +279,13 @@ def update_student_number():
             Example: 1,12345678
             """)
             student_data = input("Enter data: ")
+
+            # Check if the user pressed ENTER to back to main menu
+            if student_data == '':
+                clear_terminal()
+                main_menu()
+                break
+
             split_data = student_data.split(",")
             student_row = split_data[0]
             student_number = split_data[1]
