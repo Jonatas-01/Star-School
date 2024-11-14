@@ -226,26 +226,27 @@ def update_name():
             split_data = student_data.split(",")
             student_row = split_data[0]
             student_name = split_data[1]
-
-            # Validate if the input is a string
-            if not student_name.isalpha():
-                clear_terminal()
-                raise ValueError(
-                    f"Invalid name, please try again."
-                )
-            # Validate if the input row is a number and is in the range of the data
-            elif not student_row.isdigit() and 1 <= int(student_row) <= len(data) - 1:
-                clear_terminal()
-                raise ValueError(
-                    f"Invalid value, please try again."
-                )
+            
+            # Validate if the input is a number and is in the range of the data
+            if student_row.isdigit() and 1 <= int(student_row) <= len(data) - 1:
+                # Validate if the name is a string
+                if student_name.isalpha():
+                    student_row = int(student_row)
+                    students.update_cell(student_row + 1, 1, student_name)
+                    clear_terminal()
+                    print("Student name updated successfully!")
+                    return_to_main_menu()
+                    break
+                else:
+                    clear_terminal()
+                    raise ValueError(
+                        f"Invalid name, please try again."
+                    )
             else:
-                student_row = int(student_row)
-                students.update_cell(student_row + 1, 1, student_name)
                 clear_terminal()
-                print("Student name updated successfully!")
-                return_to_main_menu()
-                break
+                raise ValueError(
+                    f"Invalid line number, please try again."
+                )
         except ValueError as e:
             print(f"Invalid data: {e}\n")
                 
@@ -269,24 +270,24 @@ def update_student_number():
             student_number = split_data[1]
 
             # Validate if the input row is a number and is in the range of the data
-            if not student_row.isdigit() and not 1 <= int(student_row) <= len(data) - 1:
-                clear_terminal()
-                raise ValueError(
-                    f"Invalid value, please try again."
-                )
-            # Validate if the input is a number and is 8 digits long
-            elif not student_number.isdigit() and len(student_number) != 8:
-                clear_terminal()
-                raise ValueError(
-                    f"Invalid student number, please try again."
-                )
+            if student_data.isdigit() and 1 <= int(student_row) <= len(data) - 1:
+                if student_number.isdigit() and len(student_number) == 8:
+                    student_row = int(student_row)
+                    students.update_cell(student_row + 1, 2, student_number)
+                    clear_terminal()
+                    print("Student number updated successfully!")
+                    return_to_main_menu()
+                    break
+                else:
+                    clear_terminal()
+                    raise ValueError(
+                        f"Invalid student number, please try again."
+                    )
             else:
-                student_row = int(student_row)
-                students.update_cell(student_row + 1, 2, student_number)
                 clear_terminal()
-                print("Student number updated successfully!")
-                return_to_main_menu()
-                break
+                raise ValueError(
+                    f"Invalid line number, please try again."
+                )
         except ValueError as e:
             print(f"Invalid data: {e}\n")
 
