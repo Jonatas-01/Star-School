@@ -219,9 +219,9 @@ def update_name():
     Get the student row number from the user and update the name
     """
     print("Update student name")
-    print("Press ENTER to return to menu\n")
     while True:
         try:
+            print("Press ENTER to return to menu\n")
             view_students()
             print("""
             Enter student line number you want to update and student name as
@@ -235,30 +235,37 @@ def update_name():
                 clear_terminal()
                 main_menu()
                 break
-
-            split_data = student_data.split(",")
-            student_row = split_data[0]
-            student_name = split_data[1]
             
-            # Validate if the input is a number and is in the range of the data
-            if student_row.isdigit() and 1 <= int(student_row) <= len(data) - 1:
-                # Validate if the name is a string
-                if student_name.isalpha():
-                    student_row = int(student_row)
-                    students.update_cell(student_row + 1, 1, student_name)
-                    clear_terminal()
-                    print("Student name updated successfully!")
-                    return_to_main_menu()
-                    break
+            split_data = student_data.split(",")
+
+            # Check if the user entered the correct number of values
+            if len(split_data) == 2:
+                student_row = split_data[0]
+                student_name = split_data[1]
+                # Validate if the input is a number and is in the range of the data
+                if student_row.isdigit() and 1 <= int(student_row) <= len(data) - 1:
+                    # Validate if the name is a string
+                    if student_name.isalpha():
+                        student_row = int(student_row)
+                        students.update_cell(student_row + 1, 1, student_name)
+                        clear_terminal()
+                        print("Student name updated successfully!")
+                        return_to_main_menu()
+                        break
+                    else:
+                        clear_terminal()
+                        raise ValueError(
+                            f"Invalid name, please try again."
+                        )
                 else:
                     clear_terminal()
                     raise ValueError(
-                        f"Invalid name, please try again."
+                        f"Invalid line number, please try again."
                     )
             else:
                 clear_terminal()
                 raise ValueError(
-                    f"Invalid line number, please try again."
+                    f"Exactly two values are required, you provided {len(split_data)}"
                 )
         except ValueError as e:
             print(f"Invalid data: {e}\n")
@@ -269,9 +276,9 @@ def update_student_number():
     Get the student row number from the user and update the student number
     """
     print("Update student number")
-    print("Press ENTER to return to menu\n")
     while True:
         try:
+            print("Press ENTER to return to menu\n")
             view_students()
             print("""
             Enter student line number you want to update and student number as
@@ -287,27 +294,90 @@ def update_student_number():
                 break
 
             split_data = student_data.split(",")
-            student_row = split_data[0]
-            student_number = split_data[1]
 
-            # Validate if the input row is a number and is in the range of the data
-            if student_data.isdigit() and 1 <= int(student_row) <= len(data) - 1:
-                if student_number.isdigit() and len(student_number) == 8:
-                    student_row = int(student_row)
-                    students.update_cell(student_row + 1, 2, student_number)
-                    clear_terminal()
-                    print("Student number updated successfully!")
-                    return_to_main_menu()
-                    break
+            # Check if the user entered the correct number of values
+            if len(split_data) == 2:
+                student_row = split_data[0]
+                student_number = split_data[1]
+                # Validate if the input row is a number and is in the range of the data
+                if student_data.isdigit() and 1 <= int(student_row) <= len(data) - 1:
+                    if student_number.isdigit() and len(student_number) == 8:
+                        student_row = int(student_row)
+                        students.update_cell(student_row + 1, 2, student_number)
+                        clear_terminal()
+                        print("Student number updated successfully!")
+                        return_to_main_menu()
+                        break
+                    else:
+                        clear_terminal()
+                        raise ValueError(
+                            f"Invalid student number, please try again."
+                        )
                 else:
                     clear_terminal()
                     raise ValueError(
-                        f"Invalid student number, please try again."
+                        f"Invalid line number, please try again."
                     )
             else:
                 clear_terminal()
                 raise ValueError(
-                    f"Invalid line number, please try again."
+                    f"Exactly two values are required, you provided {len(split_data)}"
+                )
+        except ValueError as e:
+            print(f"Invalid data: {e}\n")
+
+
+def update_age():
+    """
+    Get the student row number from the user and update the age
+    """
+    print("Update student age")
+    while True:
+        try:
+            print("Press ENTER to return to menu\n")
+            view_students()
+            print("""
+            Enter student line number you want to update and student age as
+            the example bellow.
+            Example: 1,12
+            """)
+            student_data = input("Enter data: ")
+
+            # Check if the user pressed ENTER to back to main menu
+            if student_data == '':
+                clear_terminal()
+                main_menu()
+                break
+
+            split_data = student_data.split(",")
+            
+            # Check if the user entered the correct number of values
+            if len(split_data) == 2:
+                student_row = split_data[0]
+                student_age = split_data[1]
+                # Validate if the input is a number and is in the range of the data
+                if student_data.isdigit() and 1 <= int(student_row) <= len(data) - 1:
+                    if student_age.isdigit() and 1 <= int(student_age) <= 100:
+                        student_row = int(student_row)
+                        students.update_cell(student_row + 1, 3, student_age)
+                        clear_terminal()
+                        print("Student number updated successfully!")
+                        return_to_main_menu()
+                        break
+                    else:
+                        clear_terminal()
+                        raise ValueError(
+                            f"Invalid student age, please try again."
+                        )
+                else:
+                    clear_terminal()
+                    raise ValueError(
+                        f"Invalid line number, please try again."
+                    )
+            else:
+                clear_terminal()
+                raise ValueError(
+                    f"Exactly two values are required, you provided {len(split_data)}"
                 )
         except ValueError as e:
             print(f"Invalid data: {e}\n")
