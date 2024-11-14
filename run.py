@@ -196,6 +196,7 @@ def delete_student():
             if student_row.isdigit() and 1 <= int(student_row) <= len(data) - 1:
                 student_row = int(student_row)
                 students.delete_rows(student_row +1)
+                clear_terminal()
                 print("Student data deleted successfully!")
                 return_to_main_menu()
                 break
@@ -232,8 +233,8 @@ def update_name():
                 raise ValueError(
                     f"Invalid name, please try again."
                 )
-            # Validate if the input is a number and is in the range of the data
-            elif not student_row.isdigit() and not 1 <= int(student_row) <= len(data) - 1:
+            # Validate if the input row is a number and is in the range of the data
+            elif not student_row.isdigit() and 1 <= int(student_row) <= len(data) - 1:
                 clear_terminal()
                 raise ValueError(
                     f"Invalid value, please try again."
@@ -248,6 +249,47 @@ def update_name():
         except ValueError as e:
             print(f"Invalid data: {e}\n")
                 
+
+def update_student_number():
+    """
+    Get the student row number from the user and update the student number
+    """
+    print("Update student number\n")
+    while True:
+        try:
+            view_students()
+            print("""
+            Enter student line number you want to update and student number as
+            the example bellow.
+            Example: 1,12345678
+            """)
+            student_data = input("Enter data: ")
+            split_data = student_data.split(",")
+            student_row = split_data[0]
+            student_number = split_data[1]
+
+            # Validate if the input row is a number and is in the range of the data
+            if not student_row.isdigit() and not 1 <= int(student_row) <= len(data) - 1:
+                clear_terminal()
+                raise ValueError(
+                    f"Invalid value, please try again."
+                )
+            # Validate if the input is a number and is 8 digits long
+            elif not student_number.isdigit() and len(student_number) != 8:
+                clear_terminal()
+                raise ValueError(
+                    f"Invalid student number, please try again."
+                )
+            else:
+                student_row = int(student_row)
+                students.update_cell(student_row + 1, 2, student_number)
+                clear_terminal()
+                print("Student number updated successfully!")
+                return_to_main_menu()
+                break
+        except ValueError as e:
+            print(f"Invalid data: {e}\n")
+
 
 def choose_update_student():
     """
