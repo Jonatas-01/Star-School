@@ -86,10 +86,10 @@ def view_students():
     """
     # Print the data
     print(
-        f"{'Name':<12}{'Student Number':<21}{'Age':<10}{'Year Grade':<15}{'Test-1':<10}{'Test-2':<10}{'Test-3':<10}"
+        f"{'Name':<12}{'Student Number':<21}{'Age':<10}{'Year Grade':<15}{'Test-1':<10}{'Test-2':<10}{'Test-3':<10}{'Test-4':<10}"
         )
     for index, row in enumerate(data[1:], start=1):
-        print(f"{index}. {row[0]:<12}{row[1]:<19}{row[2]:<10}{row[3]:<16}{row[4]:<10}{row[5]:<10}{row[6]:<10}")
+        print(f"{index}. {row[0]:<12}{row[1]:<19}{row[2]:<10}{row[3]:<16}{row[4]:<10}{row[5]:<10}{row[6]:<10}{row[7]:<10}")
 
 
 def add_student():
@@ -97,13 +97,15 @@ def add_student():
     Get value from the user and update the worksheet
     """
     print("Add new student data")
-    print("Press ENTER to return to menu")
+    print("Press ENTER to return to Menu")
     while True:
         # Get the student personal data from the user
         print("""
         Enter student personal data as the example bellow.
         Example: Name, Student number, Age, Year Grade.
                 John,12345678,13,1
+                
+        To add student test scores, go to the main menu and choose option 3.
         """)
 
         # Get the student personal data from the user
@@ -184,7 +186,7 @@ def delete_student():
     Get the student row number from the user and delete the row
     """
     print("Delete student data")
-    print("Press ENTER to return to menu\n")
+    print("Press ENTER to return to Menu\n")
     while True:
         try:
             view_students()
@@ -221,7 +223,7 @@ def update_name():
     print("Update student name")
     while True:
         try:
-            print("Press ENTER to return to menu\n")
+            print("Press ENTER to return to Menu\n")
             view_students()
             print("""
             Enter student line number you want to update and student name as
@@ -278,7 +280,7 @@ def update_student_number():
     print("Update student number")
     while True:
         try:
-            print("Press ENTER to return to menu\n")
+            print("Press ENTER to return to Menu\n")
             view_students()
             print("""
             Enter student line number you want to update and student number as
@@ -334,7 +336,7 @@ def update_age():
     print("Update student age")
     while True:
         try:
-            print("Press ENTER to return to menu\n")
+            print("Press ENTER to return to Menu\n")
             view_students()
             print("""
             Enter student line number you want to update and student age as
@@ -390,7 +392,7 @@ def update_year_grade():
     print("Update student year grade")
     while True:
         try:
-            print("Press ENTER to return to menu\n")
+            print("Press ENTER to return to Menu\n")
             view_students()
             print("""
             Enter student line number you want to update and student year grade as
@@ -447,7 +449,7 @@ def update_tests_scores():
     print("Update student tests scores")
     while True:
         try:
-            print("Press ENTER to return to menu\n")
+            print("Press ENTER to return to Menu\n")
             view_students()
             print("""
             Enter student line number you want to update and student tests scores as
@@ -504,7 +506,7 @@ def update_tests_scores():
                         students.update_cell(student_row + 1, 8, test_4)
                         clear_terminal()
                         print("Student tests scores updated successfully!")
-                        return_to_main_menu
+                        return_to_main_menu()
                         break
                 else:
                     clear_terminal()
@@ -535,7 +537,7 @@ def choose_update_student():
                 3. Age
                 4. Year Grade
                 5. Tests scores
-                6. Return to main menu
+                6. Return to Main Menu
                 7. Exit
                 """)
             # Get the student number from the user
@@ -605,37 +607,7 @@ def main_menu():
                 break
             elif choice == 2:
                 clear_terminal()
-                while True:
-                    print("""
-                    Please choose from the following options:
-
-                    1.Add new student personal data.
-                    2.Add student exams data.
-                    3.Return to Main Menu.
-                    4.Exit.
-                    """)
-                    try:
-                        choice = int(input("Enter your choice (1-4): "))
-                        if choice == 1:
-                            clear_terminal()
-                            add_student()
-                            break
-                        elif choice == 2:
-                            print(f"Option {choice} choosed")
-                            break
-                        elif choice == 3:
-                            clear_terminal()
-                            main_menu()
-                            break
-                        elif choice == 4:
-                            exit_program()
-                            break
-                        else:
-                            clear_terminal()
-                            print("Invalid input. Please enter a number between 1 and 4.")
-                    except ValueError:
-                        clear_terminal()
-                        print("Invalid input. Please enter a number between 1 and 4.")
+                add_student()
                 break
             elif choice == 3:
                 clear_terminal()
@@ -662,4 +634,3 @@ def main_menu():
 
 
 welcome_page()
-
