@@ -16,6 +16,7 @@ SHEET = GSPREAD_CLIENT.open('star_school')
 students = SHEET.worksheet('students')
 data = students.get_all_values()
 
+
 def welcome_page():
     """
      Display the Welcome Page to customer
@@ -38,7 +39,7 @@ def clear_terminal():
     """
      Clear the terminal
     """
-    os.system("clear") # clear the terminal
+    os.system("clear")  # clear the terminal
 
 
 def exit_program():
@@ -47,7 +48,7 @@ def exit_program():
     """
     clear_terminal()
     print("Thank you for using Star School!")
-    print("Goodbye!")  
+    print("Goodbye!")
 
 
 def return_to_main_menu():
@@ -104,7 +105,7 @@ def add_student():
         Enter student personal data as the example bellow.
         Example: Name, Student number, Age, Year Grade.
                 John,12345678,13,1
-                
+
         To add student test scores, go to the main menu and choose option 3.
         """)
 
@@ -131,7 +132,7 @@ def add_student():
 def validate_data(values):
     """
     Inside the try, validades all 4 values from the user, update
-    string to integer starting from second data and raise ValueError 
+    string to integer starting from second data and raise ValueError
     if the data is invalid.
     """
 
@@ -237,7 +238,7 @@ def update_name():
                 clear_terminal()
                 main_menu()
                 break
-            
+
             split_data = student_data.split(",")
 
             # Check if the user entered the correct number of values
@@ -271,7 +272,7 @@ def update_name():
                 )
         except ValueError as e:
             print(f"Invalid data: {e}\n")
-                
+
 
 def update_student_number():
     """
@@ -352,7 +353,7 @@ def update_age():
                 break
 
             split_data = student_data.split(",")
-            
+
             # Check if the user entered the correct number of values
             if len(split_data) == 2:
                 student_row = split_data[0]
@@ -520,7 +521,7 @@ def update_tests_scores():
                 )
         except ValueError as e:
             print(f"Invalid data: {e}\n")
-                        
+
 
 def choose_update_student():
     """
@@ -542,7 +543,7 @@ def choose_update_student():
                 """)
             # Get the student number from the user
             update_option = int(input("Enter your choice: \n"))
-            
+
             # Validate if the input is a number and is in the range of the data
             if update_option == 1:
                 clear_terminal()
@@ -596,7 +597,6 @@ def main_menu():
     5. Exit
     """)
     while True:
-    # Get the user's choice
         try:
             choice = int(input("Enter your choice (1-5): \n"))
             if choice == 1:
