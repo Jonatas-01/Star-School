@@ -39,7 +39,7 @@ Access data from googlesheets (view only): [Google Sheets Data]()
 
 - __Main Menu__
 
-    - Feature will first appear below the welcome page and later every time the user presses to return to the main menu.
+    - Feature will first appear under the welcome page and later every time the user presses to return to the main menu.
     - The main menu displays options to the user: View all student's data, add new student data, update student data, delete student data, and exit.
     - User will directed to tha page chosen.
 
@@ -49,16 +49,36 @@ Access data from googlesheets (view only): [Google Sheets Data]()
 
     - View students displays all students data in a table format, each student is placed in a row.
     - This feature will appear when the user inputs "1" in the terminal while in the main menu, and when all pages update students information.
-    - When choosing to view students from the main menu, an option to return to the main menu or exit will appear below the students display.
+    - When choosing to view students from the main menu, an option to return to the main menu or exit will appear under the students display.
 
     ![View Students]()
 
 - __Add Student__
 
-    - Feature will appears when user input "2" in the main menu.
-    - Add student will display instructions of how to send a data in CSV format, and option to ruturn to the main menu.
-    - After data validation, value will be store in google sheet and give option to return to main menu or exit.
+    - Add student will display instructions on how to send data in CSV format, and the option to return to the main menu.
+    - Feature will appear when the user input "2" in the main menu.
+    - After data validation, the value will be stored in Google Sheets and give the option to return to the main menu or exit.
 
     ![Add Student]()
 
+- __Update Student Data__
 
+    - Update Student will display options of what data want to update. The options are: Name, Student Number, Age, Year Grade, and Test Scores. It will also display the option to return to the main menu or exit.
+        - All options to update data have validation, instructions on how to send data, and only change the data chosen.
+    - Feature will appear when the user input "3" in the main menu.
+    - After data validation, the value will be updated in Google Sheets and give the option to return to the main menu or exit.
+
+    ![Update Student Data]()
+
+- __Delete Student Data__
+
+    - Delete Student Data will display a list of all students and each student in a row.
+    - Feature will appear when the user input "4" in the main menu.
+    - The user will need to select the row to delete or press ENTER to back to the main menu.
+
+    ![Delete Student Data]()
+
+- __Exit__
+
+    - Exit will display a Good Bye message and make user leave the application. 
+    - Feature will appear when the user input "5" in the the main menu.
