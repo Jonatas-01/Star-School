@@ -63,7 +63,7 @@ def return_to_main_menu():
             2.Exit.
             """)
             # Get user's choise
-            choice = int(input("Enter you choice: "))
+            choice = int(input("Enter you choice: \n"))
             if choice == 1:
                 clear_terminal()
                 print("Returning to Main Menu...")
@@ -109,7 +109,7 @@ def add_student():
         """)
 
         # Get the student personal data from the user
-        new_data = input("Enter student data: ")
+        new_data = input("Enter student data: \n")
         personal_data = new_data.split(",")
 
         # Validate the data
@@ -194,7 +194,7 @@ def delete_student():
             print("""
             Enter student line number you want to delete.
             """)
-            student_row = input("Enter line number: ")
+            student_row = input("Enter line number: \n")
             # Validate if the input is a number and is in the range of the data
             if student_row.isdigit() and 1 <= int(student_row) <= len(data) - 1:
                 student_row = int(student_row)
@@ -230,7 +230,7 @@ def update_name():
             the example bellow.
             Example: 1,John
             """)
-            student_data = input("Enter data: ")
+            student_data = input("Enter data: \n")
 
             # Check if the user pressed ENTER to back to main menu
             if student_data == '':
@@ -287,7 +287,7 @@ def update_student_number():
             the example bellow.
             Example: 1,12345678
             """)
-            student_data = input("Enter data: ")
+            student_data = input("Enter data: \n")
 
             # Check if the user pressed ENTER to back to main menu
             if student_data == '':
@@ -343,7 +343,7 @@ def update_age():
             the example bellow.
             Example: 1,12
             """)
-            student_data = input("Enter data: ")
+            student_data = input("Enter data: \n")
 
             # Check if the user pressed ENTER to back to main menu
             if student_data == '':
@@ -399,7 +399,7 @@ def update_year_grade():
             the example bellow.
             Example: 1,2
             """)
-            student_data = input("Enter data: ")
+            student_data = input("Enter data: \n")
 
             # Check if the user pressed ENTER to back to main menu
             if student_data == '':
@@ -457,7 +457,7 @@ def update_tests_scores():
             Example: 1,82,65,70,90
             If you want to update only one test score, enter the score and 0 for the other tests.
             """)
-            student_data = input("Enter data: ")
+            student_data = input("Enter data: \n")
 
             # Check if the user pressed ENTER to back to main menu
             if student_data == '':
@@ -541,7 +541,7 @@ def choose_update_student():
                 7. Exit
                 """)
             # Get the student number from the user
-            update_option = int(input("Enter your choice: "))
+            update_option = int(input("Enter your choice: \n"))
             
             # Validate if the input is a number and is in the range of the data
             if update_option == 1:
@@ -598,7 +598,7 @@ def main_menu():
     while True:
     # Get the user's choice
         try:
-            choice = int(input("Enter your choice (1-5): "))
+            choice = int(input("Enter your choice (1-5): \n"))
             if choice == 1:
                 clear_terminal()
                 print("View all students data\n")
