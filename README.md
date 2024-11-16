@@ -1,32 +1,29 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Star School
 
-Welcome,
+The Star School is a software application designed to help schools manage their students. It provides a terminal design with easy access and intuitive usability. All pages have clear instructions on how to navigate through the system.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **May 14, 2024**
+The user will be able to add, update information, delete and view a list of students.
 
-## Reminders
+![Welcome Page]()
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+Visit the deployed site here: [Star School]()
 
-## Creating the Heroku app
+Access data from googlesheets (view only): [Google Sheets Data]()
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## User Stories
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### User
+> As a user I want to be able to have access to a list of all students.   
+> As a user I want to be able to add new students.    
+> As a user I want to be able to update any information of the students.  
+> As a user I want to be able to delete students from my data.    
+> As a user I want to be able to go back to the menu any time I want.   
+> As a user I want a clear terminal on each page.   
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+### Business Owner
+> As a software owner I want to provide a clean design to users.    
+> As a software owner I want to provide all the data the user needs.     
+> As a software owner I want to provide to user the ability to add, update, and delete data.     
+> As a software owner I want to prevent users from sending invalid inputs.   
+> As a software owner I want to facilitate the data management to the user. 
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
