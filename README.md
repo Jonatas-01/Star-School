@@ -8,7 +8,7 @@ The user will be able to add, update information, delete and view a list of stud
 
 Visit the deployed site here: [Star School]()
 
-Access data from googlesheets (view only): [Google Sheets Data]()
+Access data from googlesheets (view only): [Google Sheets Data](https://docs.google.com/spreadsheets/d/1CCOi1AUOKehff-ohgTwe3t93eIQz85yU5-M2x407v5E/edit?usp=sharing)
 
 ## User Stories
 
