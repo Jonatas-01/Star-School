@@ -80,5 +80,25 @@ Access data from googlesheets (view only): [Google Sheets Data]()
 
 - __Exit__
 
-    - Exit will display a Good Bye message and make user leave the application. 
+    - Exit will display a goodbye message and make user leave the application. 
     - Feature will appear when the user input "5" in the the main menu.
+
+    ![Exit]()
+
+## Skeleton Plane
+
+- __Flowchart:__
+    A detailed flowchart was created to outline the user journey and application logic.
+    
+    ![Flowchart]()
+
+- __Google API:__
+    Prior to starting any program function code, the relevant Credentials and API setup took place. Security was a crucial factor in connecting to a Google Account to access the Google Sheets worksheet. Guidance for setting up these authorizations and credentials was provided through the Code Institute's Full Stack Software Development course.
+
+- __Google Sheets:__
+    Used to store my data, simulating a database. All data entry and manipulation occur within the terminal, and the user interacts with a clear and straightforward CLI.
+
+    ![Google Sheet]()
+
+- __Desing:__
+    The entire program is displayed in a Command Line Interface (CLI). The application is designed to be user-friendly with clear prompts and validations to guide users through various tasks such as adding income, recording expenses, and generating summaries.
