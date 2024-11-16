@@ -152,3 +152,10 @@ Heroku has been used to deploy this project as Python is used as a back-end lang
 8. Search for the repository name, select the branch that you would like to build from, and connect it via the '**Connect**' button.
 9. Choose from '**Automatic**' or '**Manual**' deployment options, I chose the 'Automatic' deployment method. Click '**Deploy Branch**'.
 10. Once the waiting period for the app to build has finished, click the '**View**' link to bring you to your newly deployed site. 
+
+## Credits
+
+### Content
+>**Code Institute** Love Sandwiches Project Walkthrough     
+
+>  General lookup for Pyhton taken from [w3 school](https://www.w3schools.com/python/)
