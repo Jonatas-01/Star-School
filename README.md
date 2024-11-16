@@ -102,3 +102,23 @@ Access data from googlesheets (view only): [Google Sheets Data]()
 
 - __Desing:__
     The entire program is displayed in a Command Line Interface (CLI). The application is designed to be user-friendly with clear prompts and validations to guide users through various tasks such as adding income, recording expenses, and generating summaries.
+
+## Testing
+
+**Testing Input**
+| Test | Outcome |
+|--|--|
+|All input text and numbers sending data correctly| Pass |
+|All inputs validate data correctly| Pass|
+|Prevent user from sending incorrect data| Pass |
+
+> No Issues reported from the users
+
+### Bugs
+
+- When a user interacts with students data (add,update,delete), it does not update the table, unless the user leaves the application and runs again.
+
+### Validator Testing
+
+- Python
+    - No major error return when passing 
