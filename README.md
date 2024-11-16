@@ -121,4 +121,7 @@ Access data from googlesheets (view only): [Google Sheets Data]()
 ### Validator Testing
 
 - Python
-    - No major error return when passing 
+    - No major error returned when passing except by Long line. Most of the lines were adjusted to fit Pip8, but I opted to not fix some of them for readability purposes.
+
+    ![Pyhton]()
+
