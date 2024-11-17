@@ -6,7 +6,7 @@ The user will be able to add, update information, delete and view a list of stud
 
 ![Welcome Page]()
 
-Visit the deployed site here: [Star School]()
+Visit the deployed site here: [Star School](https://star-school-aecf5ade78e1.herokuapp.com/)
 
 Access data from googlesheets (view only): [Google Sheets Data](https://docs.google.com/spreadsheets/d/1CCOi1AUOKehff-ohgTwe3t93eIQz85yU5-M2x407v5E/edit?usp=sharing)
 
