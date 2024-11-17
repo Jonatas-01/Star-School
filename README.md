@@ -121,7 +121,7 @@ Access data from googlesheets (view only): [Google Sheets Data](https://docs.goo
 ### Validator Testing
 
 - Python
-    - No major error returned when passing except by Long line. Most of the lines were adjusted to fit Pip8, but I opted to not fix some of them for readability purposes.
+    - No major error was returned when passing except by Long line and missing whitespace which there was not way to add whitespace in that occasion. Most of the lines were adjusted to fit Pip8, but I opted not to fix thoses that not interfere in terminal for readability purposes.
 
     ![Pyhton](https://github.com/Jonatas-01/Star-School/blob/main/readme-img/python-validation.png)
 
