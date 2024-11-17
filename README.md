@@ -4,7 +4,7 @@ The Star School is a software application designed to help schools manage their 
 
 The user will be able to add, update information, delete and view a list of students.
 
-![Welcome Page]()
+![Welcome Page](https://github.com/Jonatas-01/Star-School/blob/main/readme-img/welcome-main.png)
 
 Visit the deployed site here: [Star School](https://star-school-aecf5ade78e1.herokuapp.com/)
 
@@ -35,7 +35,7 @@ Access data from googlesheets (view only): [Google Sheets Data](https://docs.goo
     - Welcome Page has a welcoming text and a draw "Star School".
     - Bellow welcome text has main menu.
 
-    ![Welcome Page]()
+    ![Welcome Page](https://github.com/Jonatas-01/Star-School/blob/main/readme-img/welcome-page.png)
 
 - __Main Menu__
 
@@ -43,7 +43,7 @@ Access data from googlesheets (view only): [Google Sheets Data](https://docs.goo
     - The main menu displays options to the user: View all student's data, add new student data, update student data, delete student data, and exit.
     - User will directed to tha page chosen.
 
-    ![Main Menu]()
+    ![Main Menu](https://github.com/Jonatas-01/Star-School/blob/main/readme-img/main-menu.png)
 
 - __View Students__
 
@@ -51,7 +51,7 @@ Access data from googlesheets (view only): [Google Sheets Data](https://docs.goo
     - This feature will appear when the user inputs "1" in the terminal while in the main menu, and when all pages update students information.
     - When choosing to view students from the main menu, an option to return to the main menu or exit will appear under the students display.
 
-    ![View Students]()
+    ![View Students](https://github.com/Jonatas-01/Star-School/blob/main/readme-img/view-students.png)
 
 - __Add Student__
 
@@ -59,7 +59,7 @@ Access data from googlesheets (view only): [Google Sheets Data](https://docs.goo
     - Feature will appear when the user input "2" in the main menu.
     - After data validation, the value will be stored in Google Sheets and give the option to return to the main menu or exit.
 
-    ![Add Student]()
+    ![Add Student](https://github.com/Jonatas-01/Star-School/blob/main/readme-img/add-student.png)
 
 - __Update Student Data__
 
@@ -68,7 +68,7 @@ Access data from googlesheets (view only): [Google Sheets Data](https://docs.goo
     - Feature will appear when the user input "3" in the main menu.
     - After data validation, the value will be updated in Google Sheets and give the option to return to the main menu or exit.
 
-    ![Update Student Data]()
+    ![Update Student Data](https://github.com/Jonatas-01/Star-School/blob/main/readme-img/update-student.png)
 
 - __Delete Student Data__
 
@@ -76,14 +76,14 @@ Access data from googlesheets (view only): [Google Sheets Data](https://docs.goo
     - Feature will appear when the user input "4" in the main menu.
     - The user will need to select the row to delete or press ENTER to back to the main menu.
 
-    ![Delete Student Data]()
+    ![Delete Student Data](https://github.com/Jonatas-01/Star-School/blob/main/readme-img/delete.png)
 
 - __Exit__
 
     - Exit will display a goodbye message and make user leave the application. 
     - Feature will appear when the user input "5" in the the main menu.
 
-    ![Exit]()
+    ![Exit](https://github.com/Jonatas-01/Star-School/blob/main/readme-img/exit.png)
 
 ## Skeleton Plane
 
