@@ -90,7 +90,7 @@ Access data from googlesheets (view only): [Google Sheets Data](https://docs.goo
 - __Flowchart:__
     A detailed flowchart was created to outline the user journey and application logic.
     
-    ![Flowchart]()
+    ![Flowchart](https://github.com/Jonatas-01/Star-School/blob/main/readme-img/flowchart.png)
 
 - __Google API:__
     Prior to starting any program function code, the relevant Credentials and API setup took place. Security was a crucial factor in connecting to a Google Account to access the Google Sheets worksheet. Guidance for setting up these authorizations and credentials was provided through the Code Institute's Full Stack Software Development course.
@@ -98,7 +98,7 @@ Access data from googlesheets (view only): [Google Sheets Data](https://docs.goo
 - __Google Sheets:__
     Used to store my data, simulating a database. All data entry and manipulation occur within the terminal, and the user interacts with a clear and straightforward CLI.
 
-    ![Google Sheet]()
+    ![Google Sheet](https://github.com/Jonatas-01/Star-School/blob/main/readme-img/google-sheet.png)
 
 - __Desing:__
     The entire program is displayed in a Command Line Interface (CLI). The application is designed to be user-friendly with clear prompts and validations to guide users through various tasks such as adding income, recording expenses, and generating summaries.
@@ -123,7 +123,7 @@ Access data from googlesheets (view only): [Google Sheets Data](https://docs.goo
 - Python
     - No major error returned when passing except by Long line. Most of the lines were adjusted to fit Pip8, but I opted to not fix some of them for readability purposes.
 
-    ![Pyhton]()
+    ![Pyhton](https://github.com/Jonatas-01/Star-School/blob/main/readme-img/python-validation.png)
 
 ## Deploying to Heroku  
 
