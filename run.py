@@ -32,9 +32,9 @@ def welcome_page():
       ______   _____ __    __ ________ ________ __
      /   ___) /   __|  |  |  |   __   |   __   |  |
     (   (__  /   /  |  |__|  |  |  |  |  |  |  |  |
-     \__   \(   (   |   __   |  |  |  |  |  |  |  | 
-     ___)   )\   \__|  |  |  |  |__|  |  |__|  |  |_____  
-    (______/  \_____|__|  |__|________|________|________|        
+     \__   \(   (   |   __   |  |  |  |  |  |  |  |
+     ___)   )\   \__|  |  |  |  |__|  |  |__|  |  |_____
+    (______/  \_____|__|  |__|________|________|________|
     """)
     print("Welcome to Star School!")
     print("Here you can have access to manage all students data.")
@@ -82,7 +82,7 @@ def return_to_main_menu():
             else:
                 clear_terminal()
                 print("Invalid input. Please enter a number between 1 and 2.")
-        except:
+        except ValueError:
             clear_terminal()
             print("Invalid input. Please enter a number between 1 and 2.")
 
